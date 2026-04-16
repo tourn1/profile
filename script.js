@@ -1,3 +1,10 @@
+window.onMediaLoad = function(el) {
+    const container = el.closest('.media-container');
+    if (container) {
+        container.classList.add('loaded');
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const profileHeader = document.querySelector('.profile-header');
     const ratingDisplay = document.querySelector('.rating-large');
@@ -137,10 +144,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Media Helper ---
     function renderMedia(path, className, isModal = false) {
         const isVideo = path.toLowerCase().endsWith('.mp4');
+        const spinnerHTML = `
+            <div class="nosedive-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-star">★</div>
+            </div>
+        `;
+
         if (isVideo) {
-            return `<video src="${path}" class="${className}" ${isModal ? 'controls' : 'autoplay muted loop playsinline'} onerror="this.style.display='none'"></video>`;
+            return `
+                <div class="media-container">
+                    ${spinnerHTML}
+                    <video src="${path}" class="${className}" ${isModal ? 'controls' : 'autoplay muted loop playsinline'} 
+                        oncanplay="onMediaLoad(this)" onerror="this.style.display='none'"></video>
+                </div>`;
         }
-        return `<img src="${path}" class="${className}" alt="Media" onerror="this.style.display='none'">`;  
+        return `
+            <div class="media-container">
+                ${spinnerHTML}
+                <img src="${path}" class="${className}" alt="Media" onload="onMediaLoad(this)" onerror="this.style.display='none'">
+            </div>`;
     }
 
     // --- Gallery Renderer ---
@@ -178,8 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateModalMedia() {
         // Find existing media or placeholder
-        let currentMedia = modal.querySelector('.modal-image, .modal-video');
-        if (currentMedia) currentMedia.style.opacity = '0';
+        let currentContainer = modal.querySelector('.media-container');
+        if (currentContainer) {
+            currentContainer.classList.remove('loaded');
+            const currentMedia = currentContainer.querySelector('.modal-image, .modal-video');
+            if (currentMedia) currentMedia.style.opacity = '0';
+        }
 
         setTimeout(() => {
             const path = allMedia[currentIndex].src;
@@ -187,17 +214,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const newMediaHTML = renderMedia(path, isVideo ? 'modal-video' : 'modal-image', true);
 
             // Re-render the media element inside the wrapper
-            // We need to keep the rating and controls, so we only replace the media part
-            const oldMedia = modal.querySelector('.modal-image, .modal-video');
-            if (oldMedia) {
-                oldMedia.outerHTML = newMediaHTML;
+            const oldContainer = modal.querySelector('.media-container');
+            if (oldContainer) {
+                oldContainer.outerHTML = newMediaHTML;
             } else {
                 modalWrapper.insertAdjacentHTML('afterbegin', newMediaHTML);
             }
 
             const rating = getCookie(`rating_${currentPostId}`);
             modal.querySelectorAll('.star-input').forEach(input => input.checked = (input.value === rating));
-        }, 200);
+        }, 300);
     }
 
     function attachImageListeners() {
