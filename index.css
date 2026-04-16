@@ -7,7 +7,8 @@
     --text-secondary: #666666;
     --text-muted: #999999;
     --blue-accent: #2196F3;
-    --gold: #A855F7; /* Purple accent for stars to match image */
+    --gold: #A855F7;
+    /* Purple accent for stars to match image */
     --purple-light: #F3E8FF;
     --glass-bg: rgba(255, 255, 255, 0.8);
     --border-light: rgba(0, 0, 0, 0.08);
@@ -266,7 +267,8 @@ body {
     margin-bottom: 0;
 }
 
-.post-img, .post-video {
+.post-img,
+.post-video {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -275,7 +277,8 @@ body {
     transition: transform 0.3s ease;
 }
 
-.sub-img, .sub-video {
+.sub-img,
+.sub-video {
     width: 100%;
     height: 146px;
     object-fit: cover;
@@ -526,7 +529,7 @@ body {
     border-color: #aa9988;
     background: rgba(170, 153, 136, 0.08);
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
     letter-spacing: 2.2px;
 }
 
@@ -716,7 +719,12 @@ body {
     height: 148px;
 }
 
-.post-img, .post-video, .sub-img, .sub-video, .modal-image, .modal-video {
+.post-img,
+.post-video,
+.sub-img,
+.sub-video,
+.modal-image,
+.modal-video {
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -766,13 +774,27 @@ body {
 }
 
 @keyframes nosedive-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes nosedive-pulse {
-    0%, 100% { transform: scale(0.8); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 1; }
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
 }
 
 /* Comments Section Styles */
@@ -849,7 +871,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.15);
     z-index: 2000;
     backdrop-filter: blur(15px);
     justify-content: center;
@@ -870,7 +892,8 @@ body {
     align-items: center;
 }
 
-.modal-image, .modal-video {
+.modal-image,
+.modal-video {
     max-width: 100%;
     max-height: 70vh;
     object-fit: contain;
@@ -915,7 +938,7 @@ body {
     cursor: pointer;
     z-index: 2100;
     transition: transform 0.2s ease;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .modal-close:hover {
@@ -933,8 +956,10 @@ body {
 
 /* Social Protocol Verification (Captcha) */
 .verification-wrapper {
-    margin-top: 15px; /* Aesthetic gap from comments list */
-    margin-bottom: 12px; /* Small, minimalist gap before input field */
+    margin-top: 15px;
+    /* Aesthetic gap from comments list */
+    margin-bottom: 12px;
+    /* Small, minimalist gap before input field */
     padding: 10px;
     background: rgba(168, 85, 247, 0.05);
     border: 1px dashed rgba(168, 85, 247, 0.3);
@@ -1016,7 +1041,7 @@ body {
 }
 
 /* Cleanup: Ensure no profile images in posts */
-.post-images .profile-pic, 
+.post-images .profile-pic,
 .post-images img[src*="real_profile"],
 .post-images img[alt="Profile"] {
     display: none !important;
