@@ -1193,6 +1193,45 @@ body {
         font-size: 0.75rem;
     }
 
+    .info-container {
+        padding: 20px 15px;
+        border-radius: 0;
+        margin-left: -10px;
+        margin-right: -10px;
+        border-left: none;
+        border-right: none;
+    }
+
+    .info-nav {
+        gap: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+    }
+
+    .info-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .info-tab {
+        flex-shrink: 0;
+        font-size: 0.7rem;
+    }
+
+    .info-card-header {
+        gap: 12px;
+    }
+
+    .company-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+
     .post-card {
         border-radius: 0;
         margin-left: -10px;
