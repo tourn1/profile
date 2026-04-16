@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--card-white);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-left: 4px solid #2196F3;
             padding: 15px 25px;
             border-radius: 4px;
