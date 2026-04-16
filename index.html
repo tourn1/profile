@@ -45,11 +45,10 @@
 
         <!-- Navigation Tabs -->
         <nav class="nav-tabs reveal stagger-1">
-            <div class="tab">Activity</div>
-            <div class="tab active">Moments</div>
-            <div class="tab">Photos</div>
-            <div class="tab">Rated</div>
-            <div class="tab">Friends</div>
+            <div class="tab" data-tab="information">Information</div>
+            <div class="tab active" data-tab="moments">Moments</div>
+            <div class="tab" data-tab="photos">Photos</div>
+            <div class="tab" data-tab="friends">Friends</div>
         </nav>
 
         <!-- Main Content + Sidebar -->
@@ -58,263 +57,377 @@
             <!-- Feed Area -->
             <main class="feed">
 
-                <!-- Post 1: Firenze -->
-                <article class="post-card reveal stagger-2" id="post-firenze">
-                    <div class="post-header">
-                        <img src="images/real_profile.png" alt="" class="post-avatar">
-                        <div class="post-user-info">
-                            <span class="name">Mauricio Tourn Cussit</span>
-                            <span class="rating">4.8</span>
-                        </div>
-                    </div>
-                    <div class="post-body">
-                        <p class="post-caption">Firenze o Florencia para los amigos, la ciudad más acogedora que conocí
-                            en Europa... 🇮🇹 ✨</p>
-                        <div class="post-images">
-                            <!-- Dynamic rendering from script.js -->
-                        </div>
-                    </div>
-                    <div class="post-footer">
-                        <div class="rating-container">
-                            <span>Rate:</span>
-                            <div class="stars-interactive" data-post-id="firenze">
-                                <input type="radio" name="rate-firenze" id="f5" value="5" class="star-input"><label
-                                    for="f5" class="star-label">★</label>
-                                <input type="radio" name="rate-firenze" id="f4" value="4" class="star-input"><label
-                                    for="f4" class="star-label">★</label>
-                                <input type="radio" name="rate-firenze" id="f3" value="3" class="star-input"><label
-                                    for="f3" class="star-label">★</label>
-                                <input type="radio" name="rate-firenze" id="f2" value="2" class="star-input"><label
-                                    for="f2" class="star-label">★</label>
-                                <input type="radio" name="rate-firenze" id="f1" value="1" class="star-input"><label
-                                    for="f1" class="star-label">★</label>
+                <!-- Tab Content: Moments -->
+                <div id="tab-moments" class="tab-pane active">
+                    <!-- Post 1: Firenze -->
+                    <article class="post-card reveal stagger-2" id="post-firenze">
+                        <div class="post-header">
+                            <img src="images/real_profile.png" alt="" class="post-avatar">
+                            <div class="post-user-info">
+                                <span class="name">Mauricio Tourn Cussit</span>
+                                <span class="rating">4.8</span>
                             </div>
                         </div>
-                        <div class="social-proof">
-                            <span>★ 38 People rated Mauricio's post</span>
-                        </div>
-                    </div>
-                    <div class="comments-section" data-post-id="firenze">
-                        <div class="comments-list"></div>
-                        <div class="verification-wrapper">
-                            <span class="verification-text">Social Protocol Verification</span>
-                            <div class="verification-track">
-                                <span class="verification-track-text">Slide to prove you're human</span>
-                                <div class="verification-slider">❯</div>
+                        <div class="post-body">
+                            <p class="post-caption">Firenze o Florencia para los amigos, la ciudad más acogedora que conocí
+                                en Europa... 🇮🇹 ✨</p>
+                            <div class="post-images">
+                                <!-- Dynamic rendering from script.js -->
                             </div>
                         </div>
-                        <div class="comment-input-wrapper">
-                            <input type="text" placeholder="Write a comment..." class="comment-input">
-                            <button class="comment-submit" disabled>Post</button>
+                        <div class="post-footer">
+                            <div class="rating-container">
+                                <span>Rate:</span>
+                                <div class="stars-interactive" data-post-id="firenze">
+                                    <input type="radio" name="rate-firenze" id="f5" value="5" class="star-input"><label
+                                        for="f5" class="star-label">★</label>
+                                    <input type="radio" name="rate-firenze" id="f4" value="4" class="star-input"><label
+                                        for="f4" class="star-label">★</label>
+                                    <input type="radio" name="rate-firenze" id="f3" value="3" class="star-input"><label
+                                        for="f3" class="star-label">★</label>
+                                    <input type="radio" name="rate-firenze" id="f2" value="2" class="star-input"><label
+                                        for="f2" class="star-label">★</label>
+                                    <input type="radio" name="rate-firenze" id="f1" value="1" class="star-input"><label
+                                        for="f1" class="star-label">★</label>
+                                </div>
+                            </div>
+                            <div class="social-proof">
+                                <span>★ 38 People rated Mauricio's post</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                        <div class="comments-section" data-post-id="firenze">
+                            <div class="comments-list"></div>
+                            <div class="verification-wrapper">
+                                <span class="verification-text">Social Protocol Verification</span>
+                                <div class="verification-track">
+                                    <span class="verification-track-text">Slide to prove you're human</span>
+                                    <div class="verification-slider">❯</div>
+                                </div>
+                            </div>
+                            <div class="comment-input-wrapper">
+                                <input type="text" placeholder="Write a comment..." class="comment-input">
+                                <button class="comment-submit" disabled>Post</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- Post 2: AC/DC -->
-                <article class="post-card reveal stagger-3" id="post-acdc">
-                    <div class="post-header">
-                        <img src="images/real_profile.png" alt="" class="post-avatar">
-                        <div class="post-user-info">
-                            <span class="name">Mauricio Tourn Cussit</span>
-                            <span class="rating">4.8</span>
-                        </div>
-                    </div>
-                    <div class="post-body">
-                        <p class="post-caption">Noche inolvidable 🤘🎸</p>
-                        <div class="post-images">
-                            <!-- Dynamic rendering from script.js -->
-                        </div>
-                    </div>
-                    <div class="post-footer">
-                        <div class="rating-container">
-                            <span>Rate:</span>
-                            <div class="stars-interactive" data-post-id="acdc">
-                                <input type="radio" name="rate-acdc" id="a5" value="5" class="star-input"><label
-                                    for="a5" class="star-label">★</label>
-                                <input type="radio" name="rate-acdc" id="a4" value="4" class="star-input"><label
-                                    for="a4" class="star-label">★</label>
-                                <input type="radio" name="rate-acdc" id="a3" value="3" class="star-input"><label
-                                    for="a3" class="star-label">★</label>
-                                <input type="radio" name="rate-acdc" id="a2" value="2" class="star-input"><label
-                                    for="a2" class="star-label">★</label>
-                                <input type="radio" name="rate-acdc" id="a1" value="1" class="star-input"><label
-                                    for="a1" class="star-label">★</label>
+                    <!-- Post 2: AC/DC -->
+                    <article class="post-card reveal stagger-3" id="post-acdc">
+                        <div class="post-header">
+                            <img src="images/real_profile.png" alt="" class="post-avatar">
+                            <div class="post-user-info">
+                                <span class="name">Mauricio Tourn Cussit</span>
+                                <span class="rating">4.8</span>
                             </div>
                         </div>
-                        <div class="social-proof">
-                            <span>★ 56 People rated Mauricio's post</span>
-                        </div>
-                    </div>
-                    <div class="comments-section" data-post-id="acdc">
-                        <div class="comments-list"></div>
-                        <div class="verification-wrapper">
-                            <span class="verification-text">Social Protocol Verification</span>
-                            <div class="verification-track">
-                                <span class="verification-track-text">Slide to prove you're human</span>
-                                <div class="verification-slider">❯</div>
+                        <div class="post-body">
+                            <p class="post-caption">Noche inolvidable 🤘🎸</p>
+                            <div class="post-images">
+                                <!-- Dynamic rendering from script.js -->
                             </div>
                         </div>
-                        <div class="comment-input-wrapper">
-                            <input type="text" placeholder="Write a comment..." class="comment-input">
-                            <button class="comment-submit" disabled>Post</button>
+                        <div class="post-footer">
+                            <div class="rating-container">
+                                <span>Rate:</span>
+                                <div class="stars-interactive" data-post-id="acdc">
+                                    <input type="radio" name="rate-acdc" id="a5" value="5" class="star-input"><label
+                                        for="a5" class="star-label">★</label>
+                                    <input type="radio" name="rate-acdc" id="a4" value="4" class="star-input"><label
+                                        for="a4" class="star-label">★</label>
+                                    <input type="radio" name="rate-acdc" id="a3" value="3" class="star-input"><label
+                                        for="a3" class="star-label">★</label>
+                                    <input type="radio" name="rate-acdc" id="a2" value="2" class="star-input"><label
+                                        for="a2" class="star-label">★</label>
+                                    <input type="radio" name="rate-acdc" id="a1" value="1" class="star-input"><label
+                                        for="a1" class="star-label">★</label>
+                                </div>
+                            </div>
+                            <div class="social-proof">
+                                <span>★ 56 People rated Mauricio's post</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                        <div class="comments-section" data-post-id="acdc">
+                            <div class="comments-list"></div>
+                            <div class="verification-wrapper">
+                                <span class="verification-text">Social Protocol Verification</span>
+                                <div class="verification-track">
+                                    <span class="verification-track-text">Slide to prove you're human</span>
+                                    <div class="verification-slider">❯</div>
+                                </div>
+                            </div>
+                            <div class="comment-input-wrapper">
+                                <input type="text" placeholder="Write a comment..." class="comment-input">
+                                <button class="comment-submit" disabled>Post</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- Post 3: Barcelona -->
-                <article class="post-card reveal stagger-4" id="post-barcelona">
-                    <div class="post-header">
-                        <img src="images/real_profile.png" alt="" class="post-avatar">
-                        <div class="post-user-info">
-                            <span class="name">Mauricio Tourn Cussit</span>
-                            <span class="rating">4.8</span>
-                        </div>
-                    </div>
-                    <div class="post-body">
-                        <p class="post-caption">Barcelona #2, paisajes, barrios, comidas y amigos, gracias @agu.mont y
-                            @maga.past por todo!!🫶</p>
-                        <div class="post-images">
-                            <!-- Dynamic rendering from script.js -->
-                        </div>
-                    </div>
-                    <div class="post-footer">
-                        <div class="rating-container">
-                            <span>Rate:</span>
-                            <div class="stars-interactive" data-post-id="barcelona">
-                                <input type="radio" name="rate-barcelona" id="b5" value="5" class="star-input"><label
-                                    for="b5" class="star-label">★</label>
-                                <input type="radio" name="rate-barcelona" id="b4" value="4" class="star-input"><label
-                                    for="b4" class="star-label">★</label>
-                                <input type="radio" name="rate-barcelona" id="b3" value="3" class="star-input"><label
-                                    for="b3" class="star-label">★</label>
-                                <input type="radio" name="rate-barcelona" id="b2" value="2" class="star-input"><label
-                                    for="b2" class="star-label">★</label>
-                                <input type="radio" name="rate-barcelona" id="b1" value="1" class="star-input"><label
-                                    for="b1" class="star-label">★</label>
+                    <!-- Post 3: Barcelona -->
+                    <article class="post-card reveal stagger-4" id="post-barcelona">
+                        <div class="post-header">
+                            <img src="images/real_profile.png" alt="" class="post-avatar">
+                            <div class="post-user-info">
+                                <span class="name">Mauricio Tourn Cussit</span>
+                                <span class="rating">4.8</span>
                             </div>
                         </div>
-                        <div class="social-proof">
-                            <span>★ 92 People rated Mauricio's post</span>
-                        </div>
-                    </div>
-                    <div class="comments-section" data-post-id="barcelona">
-                        <div class="comments-list"></div>
-                        <div class="verification-wrapper">
-                            <span class="verification-text">Social Protocol Verification</span>
-                            <div class="verification-track">
-                                <span class="verification-track-text">Slide to prove you're human</span>
-                                <div class="verification-slider">❯</div>
+                        <div class="post-body">
+                            <p class="post-caption">Barcelona #2, paisajes, barrios, comidas y amigos, gracias @agu.mont y
+                                @maga.past por todo!!🫶</p>
+                            <div class="post-images">
+                                <!-- Dynamic rendering from script.js -->
                             </div>
                         </div>
-                        <div class="comment-input-wrapper">
-                            <input type="text" placeholder="Write a comment..." class="comment-input">
-                            <button class="comment-submit" disabled>Post</button>
+                        <div class="post-footer">
+                            <div class="rating-container">
+                                <span>Rate:</span>
+                                <div class="stars-interactive" data-post-id="barcelona">
+                                    <input type="radio" name="rate-barcelona" id="b5" value="5" class="star-input"><label
+                                        for="b5" class="star-label">★</label>
+                                    <input type="radio" name="rate-barcelona" id="b4" value="4" class="star-input"><label
+                                        for="b4" class="star-label">★</label>
+                                    <input type="radio" name="rate-barcelona" id="b3" value="3" class="star-input"><label
+                                        for="b3" class="star-label">★</label>
+                                    <input type="radio" name="rate-barcelona" id="b2" value="2" class="star-input"><label
+                                        for="b2" class="star-label">★</label>
+                                    <input type="radio" name="rate-barcelona" id="b1" value="1" class="star-input"><label
+                                        for="b1" class="star-label">★</label>
+                                </div>
+                            </div>
+                            <div class="social-proof">
+                                <span>★ 92 People rated Mauricio's post</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                        <div class="comments-section" data-post-id="barcelona">
+                            <div class="comments-list"></div>
+                            <div class="verification-wrapper">
+                                <span class="verification-text">Social Protocol Verification</span>
+                                <div class="verification-track">
+                                    <span class="verification-track-text">Slide to prove you're human</span>
+                                    <div class="verification-slider">❯</div>
+                                </div>
+                            </div>
+                            <div class="comment-input-wrapper">
+                                <input type="text" placeholder="Write a comment..." class="comment-input">
+                                <button class="comment-submit" disabled>Post</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- Post 4: Lolla -->
-                <article class="post-card reveal stagger-5" id="post-lolla">
-                    <div class="post-header">
-                        <img src="images/real_profile.png" alt="" class="post-avatar">
-                        <div class="post-user-info">
-                            <span class="name">Mauricio Tourn Cussit</span>
-                            <span class="rating">4.8</span>
-                        </div>
-                    </div>
-                    <div class="post-body">
-                        <p class="post-caption">Lollapalooza 2026. Tal vez la más floja hace años, pero siempre una
-                            fiesta... 🤘🎉</p>
-                        <div class="post-images">
-                            <!-- Dynamic rendering from script.js -->
-                        </div>
-                    </div>
-                    <div class="post-footer">
-                        <div class="rating-container">
-                            <span>Rate:</span>
-                            <div class="stars-interactive" data-post-id="lolla">
-                                <input type="radio" name="rate-lolla" id="l5" value="5" class="star-input"><label
-                                    for="l5" class="star-label">★</label>
-                                <input type="radio" name="rate-lolla" id="l4" value="4" class="star-input"><label
-                                    for="l4" class="star-label">★</label>
-                                <input type="radio" name="rate-lolla" id="l3" value="3" class="star-input"><label
-                                    for="l3" class="star-label">★</label>
-                                <input type="radio" name="rate-lolla" id="l2" value="2" class="star-input"><label
-                                    for="l2" class="star-label">★</label>
-                                <input type="radio" name="rate-lolla" id="l1" value="1" class="star-input"><label
-                                    for="l1" class="star-label">★</label>
+                    <!-- Post 4: Lolla -->
+                    <article class="post-card reveal stagger-5" id="post-lolla">
+                        <div class="post-header">
+                            <img src="images/real_profile.png" alt="" class="post-avatar">
+                            <div class="post-user-info">
+                                <span class="name">Mauricio Tourn Cussit</span>
+                                <span class="rating">4.8</span>
                             </div>
                         </div>
-                        <div class="social-proof">
-                            <span>★ 74 People rated Mauricio's post</span>
-                        </div>
-                    </div>
-                    <div class="comments-section" data-post-id="lolla">
-                        <div class="comments-list"></div>
-                        <div class="verification-wrapper">
-                            <span class="verification-text">Social Protocol Verification</span>
-                            <div class="verification-track">
-                                <span class="verification-track-text">Slide to prove you're human</span>
-                                <div class="verification-slider">❯</div>
+                        <div class="post-body">
+                            <p class="post-caption">Lollapalooza 2026. Tal vez la más floja hace años, pero siempre una
+                                fiesta... 🤘🎉</p>
+                            <div class="post-images">
+                                <!-- Dynamic rendering from script.js -->
                             </div>
                         </div>
-                        <div class="comment-input-wrapper">
-                            <input type="text" placeholder="Write a comment..." class="comment-input">
-                            <button class="comment-submit" disabled>Post</button>
+                        <div class="post-footer">
+                            <div class="rating-container">
+                                <span>Rate:</span>
+                                <div class="stars-interactive" data-post-id="lolla">
+                                    <input type="radio" name="rate-lolla" id="l5" value="5" class="star-input"><label
+                                        for="l5" class="star-label">★</label>
+                                    <input type="radio" name="rate-lolla" id="l4" value="4" class="star-input"><label
+                                        for="l4" class="star-label">★</label>
+                                    <input type="radio" name="rate-lolla" id="l3" value="3" class="star-input"><label
+                                        for="l3" class="star-label">★</label>
+                                    <input type="radio" name="rate-lolla" id="l2" value="2" class="star-input"><label
+                                        for="l2" class="star-label">★</label>
+                                    <input type="radio" name="rate-lolla" id="l1" value="1" class="star-input"><label
+                                        for="l1" class="star-label">★</label>
+                                </div>
+                            </div>
+                            <div class="social-proof">
+                                <span>★ 74 People rated Mauricio's post</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                        <div class="comments-section" data-post-id="lolla">
+                            <div class="comments-list"></div>
+                            <div class="verification-wrapper">
+                                <span class="verification-text">Social Protocol Verification</span>
+                                <div class="verification-track">
+                                    <span class="verification-track-text">Slide to prove you're human</span>
+                                    <div class="verification-slider">❯</div>
+                                </div>
+                            </div>
+                            <div class="comment-input-wrapper">
+                                <input type="text" placeholder="Write a comment..." class="comment-input">
+                                <button class="comment-submit" disabled>Post</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <!-- Post 5: Cobo -->
-                <article class="post-card reveal stagger-2" id="post-cobo" style="animation-delay: 0.6s;">
-                    <div class="post-header">
-                        <img src="images/real_profile.png" alt="" class="post-avatar">
-                        <div class="post-user-info">
-                            <span class="name">Mauricio Tourn Cussit</span>
-                            <span class="rating">4.8</span>
-                        </div>
-                    </div>
-                    <div class="post-body">
-                        <p class="post-caption">Mágica navidad y año nuevo en Cobo 🎅🎄🎇🥂👌</p>
-                        <div class="post-images">
-                            <!-- Dynamic rendering from script.js -->
-                        </div>
-                    </div>
-                    <div class="post-footer">
-                        <div class="rating-container">
-                            <span>Rate:</span>
-                            <div class="stars-interactive" data-post-id="cobo">
-                                <input type="radio" name="rate-cobo" id="c5" value="5" class="star-input"><label
-                                    for="c5" class="star-label">★</label>
-                                <input type="radio" name="rate-cobo" id="c4" value="4" class="star-input"><label
-                                    for="c4" class="star-label">★</label>
-                                <input type="radio" name="rate-cobo" id="c3" value="3" class="star-input"><label
-                                    for="c3" class="star-label">★</label>
-                                <input type="radio" name="rate-cobo" id="c2" value="2" class="star-input"><label
-                                    for="c2" class="star-label">★</label>
-                                <input type="radio" name="rate-cobo" id="c1" value="1" class="star-input"><label
-                                    for="c1" class="star-label">★</label>
+                    <!-- Post 5: Cobo -->
+                    <article class="post-card reveal stagger-2" id="post-cobo" style="animation-delay: 0.6s;">
+                        <div class="post-header">
+                            <img src="images/real_profile.png" alt="" class="post-avatar">
+                            <div class="post-user-info">
+                                <span class="name">Mauricio Tourn Cussit</span>
+                                <span class="rating">4.8</span>
                             </div>
                         </div>
-                        <div class="social-proof">
-                            <span>★ 64 People rated Mauricio's post</span>
-                        </div>
-                    </div>
-                    <div class="comments-section" data-post-id="cobo">
-                        <div class="comments-list"></div>
-                        <div class="verification-wrapper">
-                            <span class="verification-text">Social Protocol Verification</span>
-                            <div class="verification-track">
-                                <span class="verification-track-text">Slide to prove you're human</span>
-                                <div class="verification-slider">❯</div>
+                        <div class="post-body">
+                            <p class="post-caption">Mágica navidad y año nuevo en Cobo 🎅🎄🎇🥂👌</p>
+                            <div class="post-images">
+                                <!-- Dynamic rendering from script.js -->
                             </div>
                         </div>
-                        <div class="comment-input-wrapper">
-                            <input type="text" placeholder="Write a comment..." class="comment-input">
-                            <button class="comment-submit" disabled>Post</button>
+                        <div class="post-footer">
+                            <div class="rating-container">
+                                <span>Rate:</span>
+                                <div class="stars-interactive" data-post-id="cobo">
+                                    <input type="radio" name="rate-cobo" id="c5" value="5" class="star-input"><label
+                                        for="c5" class="star-label">★</label>
+                                    <input type="radio" name="rate-cobo" id="c4" value="4" class="star-input"><label
+                                        for="c4" class="star-label">★</label>
+                                    <input type="radio" name="rate-cobo" id="c3" value="3" class="star-input"><label
+                                        for="c3" class="star-label">★</label>
+                                    <input type="radio" name="rate-cobo" id="c2" value="2" class="star-input"><label
+                                        for="c2" class="star-label">★</label>
+                                    <input type="radio" name="rate-cobo" id="c1" value="1" class="star-input"><label
+                                        for="c1" class="star-label">★</label>
+                                </div>
+                            </div>
+                            <div class="social-proof">
+                                <span>★ 64 People rated Mauricio's post</span>
+                            </div>
+                        </div>
+                        <div class="comments-section" data-post-id="cobo">
+                            <div class="comments-list"></div>
+                            <div class="verification-wrapper">
+                                <span class="verification-text">Social Protocol Verification</span>
+                                <div class="verification-track">
+                                    <span class="verification-track-text">Slide to prove you're human</span>
+                                    <div class="verification-slider">❯</div>
+                                </div>
+                            </div>
+                            <div class="comment-input-wrapper">
+                                <input type="text" placeholder="Write a comment..." class="comment-input">
+                                <button class="comment-submit" disabled>Post</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Instagram Legend -->
+                    <div class="instagram-legend reveal reveal-scale" style="text-align: center; margin: 40px 0; font-size: 0.9rem; color: var(--text-muted); letter-spacing: 1px;">
+                        más de mí en <a href="https://instagram.com/tourn1" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--gold); padding-bottom: 2px; transition: all 0.3s ease;">Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Information -->
+                <div id="tab-information" class="tab-pane">
+                    <div class="info-container reveal stagger-1">
+                        <!-- Nested Tabs -->
+                        <div class="info-nav">
+                            <div class="info-tab active" data-info-tab="experience">Experience</div>
+                            <div class="info-tab" data-info-tab="education">Education</div>
+                            <div class="info-tab" data-info-tab="skills">Skills</div>
+                            <div class="info-tab" data-info-tab="about">About</div>
+                        </div>
+
+                        <!-- Nested Tab Content -->
+                        <div class="info-content">
+                            <!-- Experience -->
+                            <div id="info-experience" class="info-pane active">
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="company-logo" style="background: #5d00d2; color: #fff;">N</div>
+                                        <div class="info-card-title">
+                                            <h4>Tech Lead</h4>
+                                            <span class="company">Napse.Global</span>
+                                            <span class="date">dic. 2015 - actualidad</span>
+                                        </div>
+                                    </div>
+                                    <p class="info-card-desc">Análisis y Desarrollo de Aplicaciones WEB en tecnología Grails, SqlServer, Oracle, MongoDB, Reactjs.</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="company-logo" style="background: #284c8c; color: #fff;">H</div>
+                                        <div class="info-card-title">
+                                            <h4>PHP Developer Sr.</h4>
+                                            <span class="company">Grupo Hasar</span>
+                                            <span class="date">oct. 2013 - dic. 2015</span>
+                                        </div>
+                                    </div>
+                                    <p class="info-card-desc">Análisis y desarrollo de aplicaciones web en Drupal, HTML5, Bootstrap, JQuery, MySql, interfaces VB6, SQL Server, Social Media Twitter/Youtube/APIs.</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="company-logo" style="background: #c31a1a; color: #fff;">D</div>
+                                        <div class="info-card-title">
+                                            <h4>PHP Developer Sr.</h4>
+                                            <span class="company">DLA, Inc.</span>
+                                            <span class="date">feb. 2012 - oct. 2013</span>
+                                        </div>
+                                    </div>
+                                    <p class="info-card-desc">Desarrollo de Plataforma de contenido multimedia desarrollada en PHP5, Zend Framework, jQuery, Oracle.</p>
+                                </div>
+                            </div>
+
+                            <!-- Education -->
+                            <div id="info-education" class="info-pane">
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="company-logo" style="background: #2a2a2a; color: #fff;">U</div>
+                                        <div class="info-card-title">
+                                            <h4>TSSI, Tecnología/Técnico de software informático</h4>
+                                            <span class="company">Universidad Tecnológica Nacional</span>
+                                            <span class="date">2007 - 2008</span>
+                                        </div>
+                                    </div>
+                                    <p class="info-card-desc">Técnico Superior en Sistemas Informáticos.</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-card-header">
+                                        <div class="company-logo" style="background: #2a2a2a; color: #fff;">U</div>
+                                        <div class="info-card-title">
+                                            <h4>Tecnico Superior en Programacion</h4>
+                                            <span class="company">Universidad Tecnológica Nacional</span>
+                                            <span class="date">2004 - 2006</span>
+                                        </div>
+                                    </div>
+                                    <p class="info-card-desc">Técnico Superior en Programación. Actividades: Investigación Matemática.</p>
+                                </div>
+                            </div>
+
+                            <!-- Skills -->
+                            <div id="info-skills" class="info-pane">
+                                <div class="skills-grid">
+                                    <div class="skill-tag">PHP</div>
+                                    <div class="skill-tag">JavaScript</div>
+                                    <div class="skill-tag">Vue.js</div>
+                                    <div class="skill-tag">Node.js</div>
+                                    <div class="skill-tag">MySQL</div>
+                                    <div class="skill-tag">Redis</div>
+                                    <div class="skill-tag">AWS</div>
+                                    <div class="skill-tag">Git</div>
+                                    <div class="skill-tag">Leadership</div>
+                                    <div class="skill-tag">Docker</div>
+                                    <div class="skill-tag">RabbitMQ</div>
+                                    <div class="skill-tag">API Design</div>
+                                </div>
+                            </div>
+
+                            <!-- About -->
+                            <div id="info-about" class="info-pane">
+                                <div class="about-content">
+                                    <p>Hola!, soy Mauricio, desarrollador web desde hace más de 19 años. En este momento estoy enfocado al desarrollo en Grails, MongoDB, Nodejs, Oracle, SQL Server, PHP, MySql, HTML, jQuery, CSS... pero cuento con experiencia previa en C++, VB6, VB.NET, ASP.NET y más.</p>
+                                    <p>Estudié en la UTN donde recibí el título de Técnico Superior en Programación (2006). Desde entonces me dedico a desarrollar diversos tipos de sistemas: desde aplicaciones de escritorio (VB6, VB.NET), pasando por webs institucionales (Bootstrap, Wordpress), aplicaciones web (Zend, ASP.NET) hasta e-commerce (Magento, Drupal).</p>
+                                    <p>Durante todo este tiempo aprendí las necesidades de los clientes y las empresas, los tiempos de desarrollo y la importancia de mantenerse actualizado en un rubro que crece todo el tiempo.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
 
             </main>
 

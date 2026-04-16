@@ -314,4 +314,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // =============================================
+    // TAB SYSTEM
+    // =============================================
+
+    // Main Tab Switching
+    const mainTabs = document.querySelectorAll('.nav-tabs .tab');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    mainTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.getAttribute('data-tab');
+            if (!targetTab) return;
+
+            // Update active tab UI
+            mainTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update visible content pane
+            tabPanes.forEach(pane => {
+                pane.classList.remove('active');
+                if (pane.id === `tab-${targetTab}`) {
+                    pane.classList.add('active');
+                    // Re-run reveal animations for new content
+                    pane.querySelectorAll('.reveal').forEach(el => {
+                        el.classList.remove('revealed');
+                        revealObserver.observe(el);
+                    });
+                }
+            });
+
+            showSocialPing(`Viewing ${targetTab.toUpperCase()}`);
+        });
+    });
+
+    // Nested Information Tabs
+    const infoTabs = document.querySelectorAll('.info-tab');
+    const infoPanes = document.querySelectorAll('.info-pane');
+
+    infoTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetPaneId = tab.getAttribute('data-info-tab');
+            if (!targetPaneId) return;
+
+            // Update active info tab UI
+            infoTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update visible info pane
+            infoPanes.forEach(pane => {
+                pane.classList.remove('active');
+                if (pane.id === `info-${targetPaneId}`) {
+                    pane.classList.add('active');
+                }
+            });
+        });
+    });
 });
