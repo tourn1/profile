@@ -1006,6 +1006,15 @@ body {
     color: white;
 }
 
+.modal-counter {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2px;
+}
+
 /* Social Protocol Verification (Captcha) */
 .verification-wrapper {
     margin-top: 15px;

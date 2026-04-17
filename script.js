@@ -201,6 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateModalMedia() {
         // Find existing media or placeholder
+        const counter = modal.querySelector('#modal-counter');
+        if (counter) {
+            counter.textContent = `IMAGEN ${currentIndex + 1} DE ${allMedia.length}`;
+        }
+
         let currentContainer = modal.querySelector('.media-container');
         if (currentContainer) {
             currentContainer.classList.remove('loaded');
