@@ -1306,6 +1306,29 @@ body {
     padding: 20px 0;
 }
 
+.gallery-source {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-light);
+    opacity: 0.7;
+}
+
+.gallery-source a {
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-source a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
