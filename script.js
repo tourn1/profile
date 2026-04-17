@@ -226,6 +226,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 
+    // --- Photo Gallery Renderer ---
+    function renderPhotoGallery() {
+        const grid = document.getElementById('nosedive-photo-grid');
+        if (!grid || grid.children.length > 0) return; // Only render once
+
+        const galleryImages = [
+            'scene_1.png', 'scene_2.png', 'scene_3.png', 'scene_4.png',
+            'scene_5.png', 'scene_6.png', 'scene_7.png', 'scene_8.png',
+            'scene_9.png', 'scene_10.jpg', 'scene_11.jpg', 'scene_12.jpg',
+            'scene_13.jpg', 'scene_14.jpg', 'scene_15.jpg', 'scene_16.jpg',
+            'scene_17.jpg', 'scene_18.jpg', 'scene_19.jpg', 'scene_20.jpg',
+            'scene_21.jpg', 'scene_22.jpg', 'scene_23.jpg', 'scene_24.jpg'
+        ];
+
+        // We want 24 unique images
+        for (let i = 0; i < 24; i++) {
+            const imgName = galleryImages[i];
+            const path = `images/gallery/${imgName}`;
+            
+            const item = document.createElement('div');
+            item.className = 'photo-item reveal stagger-' + (i % 4 + 1);
+            item.innerHTML = `
+                <div class="media-container">
+                    <div class="nosedive-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-star">★</div>
+                    </div>
+                    <img src="${path}" class="clickable-gallery-img" alt="Nosedive Scene ${i+1}" onload="onMediaLoad(this)">
+                </div>
+            `;
+            
+            grid.appendChild(item);
+            revealObserver.observe(item);
+        }
+        attachGalleryListeners();
+    }
+
+    function attachGalleryListeners() {
+        document.querySelectorAll('.clickable-gallery-img').forEach(img => {
+            img.addEventListener('click', (e) => {
+                currentPostId = 'gallery'; // Special ID for gallery interactions
+                
+                // For the gallery, "allMedia" is the set of 40 images in the grid
+                const allGalleryImgs = Array.from(document.querySelectorAll('.clickable-gallery-img'));
+                allMedia = allGalleryImgs.map(i => ({ src: i.src }));
+                currentIndex = allGalleryImgs.indexOf(e.target);
+
+                modal.querySelector('.modal-stars').setAttribute('data-post-id', currentPostId);
+                updateModalMedia();
+                modal.classList.add('active');
+            });
+        });
+    }
+
     function attachImageListeners() {
         document.querySelectorAll('.clickable-img').forEach(img => {
             img.addEventListener('click', (e) => {
@@ -345,7 +399,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            showSocialPing(`Viewing ${targetTab.toUpperCase()}`);
+                showSocialPing(`Viewing ${targetTab.toUpperCase()}`);
+
+            if (targetTab === 'photos') {
+                renderPhotoGallery();
+            }
         });
     });
 

@@ -629,7 +629,8 @@ body {
 .media-container.loaded .sub-img,
 .media-container.loaded .sub-video,
 .media-container.loaded .modal-image,
-.media-container.loaded .modal-video {
+.media-container.loaded .modal-video,
+.media-container.loaded .clickable-gallery-img {
     opacity: 1;
 }
 
@@ -1286,5 +1287,199 @@ body {
     .social-icon svg {
         width: 14px;
         height: 14px;
+    }
+}
+
+/* =============================================
+   PHOTO GALLERY (Nosedive Aesthetic)
+   ============================================= */
+.photo-gallery-container {
+    padding: 20px 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding-bottom: 40px;
+}
+
+.photo-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--card-white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--gold);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.photo-item .media-container.loaded img {
+    opacity: 1;
+}
+
+/* Stagger entrance animations for the grid */
+.photo-grid .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.photo-grid .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-grid {
+        gap: 8px;
+    }
+}
+
+/* =============================================
+   FRIENDS SECTION (Nosedive Aesthetic)
+   ============================================= */
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.friend-card {
+    background: var(--card-white);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: default;
+}
+
+.friend-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: #aa9988;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.friend-avatar-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.friend-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.friend-rating-badge {
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    background: var(--gold);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.friend-rating-badge.danger {
+    background: #FF5252;
+}
+
+.friend-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.actor-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.character-name {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.imdb-link {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    margin-top: 5px;
+}
+
+.imdb-link:hover {
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.restricted-status {
+    opacity: 0.7;
+}
+
+.restricted-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ccc;
+}
+
+@media (max-width: 900px) {
+    .friends-grid {
+        grid-template-columns: 1fr;
     }
 }
